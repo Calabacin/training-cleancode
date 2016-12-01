@@ -6,6 +6,7 @@ import com.beyondcoding.cleancode.comments.Place;
 import com.beyondcoding.cleancode.comments.Pocket;
 import com.beyondcoding.cleancode.comments.Thing;
 import com.beyondcoding.cleancode.comments.Wallet;
+import com.beyondcoding.cleancode.structure.Pet;
 
 public class CommentsExample {
 
@@ -51,6 +52,13 @@ public class CommentsExample {
             double allMyMoney = wallet.getAllMoneyLeft();
             sneakyRogue.give(allMyMoney);
         }
+
+        Pet mittens = Pet.builder()
+                         .setName("Mittens")
+                         .setType("cat")
+                         .setAge(1)
+                         .setHairColor("grey")
+                         .build();
 
     }
 
