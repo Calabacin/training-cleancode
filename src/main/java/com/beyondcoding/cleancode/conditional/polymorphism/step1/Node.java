@@ -19,7 +19,19 @@ public class Node {
         case '*':
             return left.evaluate() * right.evaluate();
         default:
-            throw new IllegalStateException("Operation not supported: " + operator);
+            throw new IllegalArgumentException("Operation not supported: " + operator);
+        }
+    }
+
+    public String display() {
+        switch (operator) {
+        case '#':
+            return String.valueOf(value);
+        case '+':
+        case '*':
+            return left.display() + operator + right.display();
+        default:
+            throw new IllegalArgumentException("Operation not supported: " + operator);
         }
     }
 

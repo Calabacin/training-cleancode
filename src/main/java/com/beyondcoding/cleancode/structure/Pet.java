@@ -31,22 +31,22 @@ public class Pet {
 
         private String hairColor;
 
-        public PetBuilder setName(String name) {
+        public PetBuilder name(String name) {
             this.name = name;
             return this;
         }
 
-        public PetBuilder setType(String type) {
+        public PetBuilder type(String type) {
             this.type = type;
             return this;
         }
 
-        public PetBuilder setAge(int age) {
+        public PetBuilder age(int age) {
             this.age = age;
             return this;
         }
 
-        public PetBuilder setHairColor(String hairColor) {
+        public PetBuilder hairColor(String hairColor) {
             this.hairColor = hairColor;
             return this;
         }

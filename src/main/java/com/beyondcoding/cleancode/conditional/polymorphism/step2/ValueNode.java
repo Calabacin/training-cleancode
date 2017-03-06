@@ -1,6 +1,6 @@
 package com.beyondcoding.cleancode.conditional.polymorphism.step2;
 
-public class ValueNode extends AbstractNode {
+public class ValueNode implements Node {
 
     private double value;
 

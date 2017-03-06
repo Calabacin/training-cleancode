@@ -48,4 +48,12 @@ public class NodeTreeBuilderStep1Test {
         assertThat(node.evaluate()).isEqualTo(7);
     }
 
+    @Test
+    public void testDisplayOperation() {
+        String expression = "1+2*3";
+        Node node = nodeTreeBuilderStep1.build(expression);
+        assertThat(node).isNotNull();
+        assertThat(node.display()).isEqualTo("1.0+2.0*3.0");
+    }
+
 }

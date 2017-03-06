@@ -1,6 +1,6 @@
 package com.beyondcoding.cleancode.conditional.polymorphism.step2;
 
-public class OperatorNode extends AbstractNode {
+public class OperatorNode implements Node {
 
     private char operator;
 

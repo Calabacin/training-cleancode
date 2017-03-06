@@ -22,7 +22,7 @@ public class Story {
 
     private void assertMaximumLength(String title) {
         if (title.length() > MAXIMUM_TITLE_LENGTH) {
-            throw new IllegalStateException("Title is too long");
+            throw new IllegalArgumentException("Title is too long");
         }
     }
 

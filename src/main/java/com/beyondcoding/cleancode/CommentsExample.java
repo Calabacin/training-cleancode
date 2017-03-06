@@ -54,10 +54,10 @@ public class CommentsExample {
         }
 
         Pet mittens = Pet.builder()
-                         .setName("Mittens")
-                         .setType("cat")
-                         .setAge(1)
-                         .setHairColor("grey")
+                         .name("Mittens")
+                         .type("cat")
+                         .age(1)
+                         .hairColor("grey")
                          .build();
 
     }
