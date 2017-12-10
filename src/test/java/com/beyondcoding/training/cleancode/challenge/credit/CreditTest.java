@@ -31,7 +31,7 @@ public class CreditTest {
 
     @Test
     public void testVisa(){
-        String creditCardNumber = "4012888888881881";
+        String creditCardNumber = "4111111111111111";
         CreditCardType type = credit.check(creditCardNumber);
         Assert.assertEquals(CreditCardType.VISA, type);
 
