@@ -10,22 +10,40 @@ public class ChecksumCalculator {
     public static final int ASCII_NUMBER_OFFSET = 48;
 
     public int calculate(String creditCardNumber) {
+        List<Integer> numbers = getNumbers(creditCardNumber);
+        List<Integer> even = getEven(numbers);
+        List<Integer> odd = getOdd(numbers);
+        return calculateChecksum(even, odd);
+    }
+
+    private List<Integer> getNumbers(String creditCardNumber) {
         List<Integer> numbers = creditCardNumber.chars()
                                                 .boxed()
                                                 .map(n -> n - ASCII_NUMBER_OFFSET)
                                                 .collect(Collectors.toList());
 
         Collections.reverse(numbers);
-        int size = numbers.size();
-        List<Integer> even = IntStream.range(0, size)
-                                      .filter(n -> n % 2 == 1)
-                                      .mapToObj(numbers::get)
-                                      .collect(Collectors.toList());
-        List<Integer> odd = IntStream.range(0, size)
-                                     .filter(n -> n % 2 == 0)
-                                     .mapToObj(numbers::get)
-                                     .collect(Collectors.toList());
+        return numbers;
+    }
 
+    private List<Integer> getEven(List<Integer> numbers) {
+        int size = numbers.size();
+        return IntStream.range(0, size)
+                        .filter(n -> n % 2 == 1)
+                        .mapToObj(numbers::get)
+                        .collect(Collectors.toList());
+    }
+
+
+    private List<Integer> getOdd(List<Integer> numbers) {
+        int size = numbers.size();
+        return IntStream.range(0, size)
+                        .filter(n -> n % 2 == 0)
+                        .mapToObj(numbers::get)
+                        .collect(Collectors.toList());
+    }
+
+    private int calculateChecksum(List<Integer> even, List<Integer> odd) {
         Integer result = even.stream()
                              .reduce(0, (sum, next) -> sum + calculateSpecialProduct(next));
         return odd.stream()
