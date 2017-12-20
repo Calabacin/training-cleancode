@@ -1,13 +1,15 @@
 package com.beyondcoding.training.cleancode.conditionalstatements.polymorphism;
 
 import com.beyondcoding.training.cleancode.conditionalstatements.polymorphism.step1.NodeTreeBuilderStep1;
+import com.beyondcoding.training.cleancode.conditionalstatements.polymorphism.step2.NodeTreeBuilderStep2;
+import com.beyondcoding.training.cleancode.conditionalstatements.polymorphism.step3.NodeTreeBuilderStep3;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NodeTreeBuilderTest {
 
-    private NodeTreeBuilder nodeTreeBuilder = new NodeTreeBuilderStep1();
+    private NodeTreeBuilder nodeTreeBuilder = new NodeTreeBuilderStep3();
 
     @Test
     public void testEmptyExpression() {

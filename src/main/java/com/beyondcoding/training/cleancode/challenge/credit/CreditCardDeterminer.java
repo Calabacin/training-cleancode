@@ -1,5 +1,10 @@
 package com.beyondcoding.training.cleancode.challenge.credit;
 
+import com.beyondcoding.training.cleancode.challenge.credit.creditcardconditions.AmericanExpressCondition;
+import com.beyondcoding.training.cleancode.challenge.credit.creditcardconditions.CreditCardCondition;
+import com.beyondcoding.training.cleancode.challenge.credit.creditcardconditions.MastercardCondition;
+import com.beyondcoding.training.cleancode.challenge.credit.creditcardconditions.VisaCondition;
+
 import java.util.Arrays;
 import java.util.List;
 

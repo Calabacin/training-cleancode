@@ -13,6 +13,4 @@ public class JavaDocs {
         return value;
     }
 
-
-
 }

@@ -25,6 +25,8 @@ public class BeyondCodingTrainer {
 
         prepareFor(presentation, nextWeek);
 
+         // no go...
+
 
 
         prepareFor(presentation, company, numberOfDevelopers, nextWeek, vienna);

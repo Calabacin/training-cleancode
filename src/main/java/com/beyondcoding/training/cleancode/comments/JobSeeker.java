@@ -7,12 +7,15 @@ public class JobSeeker {
 
     public void seek(Person person, Job job){
 
-        // if the person is qualified for the job
-        if(person.hasRelatedDegree(job) &&
-                person.getYearsOfWorkingExperience(job)){
+        if(isQualifiedForThe(job, person)){
             person.applyFor(job);
         }
 
+    }
+
+    private boolean isQualifiedForThe(Job job, Person person) {
+        return person.hasRelatedDegree(job) &&
+                person.getYearsOfWorkingExperience(job);
     }
 
 }

@@ -9,46 +9,31 @@ public class CreditTest {
 
     @Test
     public void testAmericanExpress(){
-        String creditCardNumber = "378282246310005";
-        CreditCardType type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.AMERICAN_EXPRESS, type);
+        assertCreditCard("378282246310005", CreditCardType.AMERICAN_EXPRESS);
+        assertCreditCard("371449635398431", CreditCardType.AMERICAN_EXPRESS);
+    }
 
-        creditCardNumber = "371449635398431";
-        type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.AMERICAN_EXPRESS, type);
+    private void assertCreditCard(String creditCardNumber, CreditCardType expectedType) {
+        CreditCardType type = credit.check(creditCardNumber);
+        Assert.assertEquals(expectedType, type);
     }
 
     @Test
     public void testMastercard(){
-        String creditCardNumber = "5555555555554444";
-        CreditCardType type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.MASTERCARD, type);
-
-        creditCardNumber = "5105105105105100";
-        type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.MASTERCARD, type);
+        assertCreditCard("5555555555554444", CreditCardType.MASTERCARD);
+        assertCreditCard("5105105105105100", CreditCardType.MASTERCARD);
     }
 
     @Test
     public void testVisa(){
-        String creditCardNumber = "4111111111111111";
-        CreditCardType type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.VISA, type);
-
-        creditCardNumber = "4012888888881881";
-        type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.VISA, type);
+        assertCreditCard("4111111111111111", CreditCardType.VISA);
+        assertCreditCard("4012888888881881", CreditCardType.VISA);
     }
 
     @Test
     public void testInvalid(){
-        String creditCardNumber = "6176292929";
-        CreditCardType type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.INVALID, type);
-
-        creditCardNumber = "510510510510212";
-        type = credit.check(creditCardNumber);
-        Assert.assertEquals(CreditCardType.INVALID, type);
+        assertCreditCard("6176292929", CreditCardType.INVALID);
+        assertCreditCard("510510510510212", CreditCardType.INVALID);
     }
 
 }
